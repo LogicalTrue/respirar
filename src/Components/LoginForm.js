@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import clients from '../Clients';
 
 const testUser = {
   username: 'test',
@@ -17,8 +18,8 @@ const LoginForm = () => {
       //const response = 
       await axios.post('http://localhost:3000/oauth2/token', {
         grant_type: 'password',
-        client_id: '4e1f3bb2-cab9-4e1f-ae0b-673e5294e0fe',
-        client_secret: 'cb56e364-edab-49d9-8f68-c31cd7ac1231',
+        client_id: clients.client_id, // configurar
+        client_secret: clients.clientSecret, // configurar
         username: testUser.username,
         password: testUser.password,
       });

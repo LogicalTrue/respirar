@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import queryString from 'query-string';
+import clients from '../Clients'
 
 const CallbackPage = () => {
   useEffect(() => {
     const params = {
       grant_type: 'authorization_code',
-      client_id: '4e1f3bb2-cab9-4e1f-ae0b-673e5294e0fe',
-      client_secret: 'cb56e364-edab-49d9-8f68-c31cd7ac1231',
+      client_id: clients.clientId,
+      client_secret: clients.clientSecret, 
       redirect_uri: 'http://localhost:3000/callback',
       code: queryString.parse(window.location.search).code,
     };

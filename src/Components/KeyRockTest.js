@@ -1,11 +1,12 @@
 import React from 'react';
 import queryString from 'query-string';
+import clients from '../Clients'
 
 const KeyRockTest = () => {
   const handleLogin = () => {
     const params = {
       response_type: 'code',
-      client_id: '4e1f3bb2-cab9-4e1f-ae0b-673e5294e0fe',
+      client_id: clients.client_id,
       redirect_uri: 'http://localhost:3000/callback',
       scope: 'openid',
       state: 'uuid ',
